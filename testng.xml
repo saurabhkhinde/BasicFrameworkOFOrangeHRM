@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="OrangeHRM Automation Suite">
+    <test name="Login Tests">
+        <classes>
+            <class name="tests.LoginTest"/>
+            <class name="tests.E2EEmployeeFlowTest"/>
+        </classes>
+    </test>
+    <listeners>
+        <listener class-name="listeners.TestFailureListener"/>
+    </listeners>
+</suite>
