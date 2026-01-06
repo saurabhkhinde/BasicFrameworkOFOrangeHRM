@@ -44,9 +44,7 @@ public class E2EEmployeeFlowTest extends BaseTest {
         addEmployeePage.addEmployee(firstName, lastName);
 
         // ---------- Verify Personal Details Page ----------
-        WaitUtils.waitForElementVisible(
-                driver,
-                xpath("//h6[text()='Personal Details']"),
+        WaitUtils.waitForElementVisible(driver, xpath("//h6[text()='Personal Details']"),
                 Integer.parseInt(ConfigReader.get("explicitWait"))
         );
 
@@ -55,10 +53,7 @@ public class E2EEmployeeFlowTest extends BaseTest {
         EmployeeListPage employeeListPage = new EmployeeListPage(driver);
         employeeListPage.searchEmployee(firstName);
 
-        Assert.assertTrue(
-                employeeListPage.isEmployeeDisplayed(),
-                "Employee not found in employee list"
-        );
+        Assert.assertTrue(employeeListPage.isEmployeeDisplayed(),"Employee not found in employee list");
 
         // ---------- Logout ----------
         menuPage.logout();
